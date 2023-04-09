@@ -1,13 +1,18 @@
-import React from "react";
-import { Container, Typography } from "@mui/material";
+import React from 'react';
+import { Container } from '@mui/material';
+import Header from './components/Header';
+import TransactionForm from './components/TransactionForm';
+import TransactionList from './components/TransactionList';
 
 function App() {
   return (
-    <Container maxWidth="md">
-      <Typography variant="h3" align="center" gutterBottom>
-        Expense Tracker
-      </Typography>
-    </Container>
+    <>
+      <Header />
+      <Container maxWidth="md">
+        <TransactionForm />
+        <TransactionList />
+      </Container>
+    </>
   );
 }
 
