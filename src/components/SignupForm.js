@@ -1,15 +1,7 @@
 import React, { useState } from 'react';
-import {
-  Box,
-  Button,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogTitle,
-  TextField,
-} from '@mui/material';
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField } from '@mui/material';
 
-const SignupForm = () => {
+const SignupForm = ({ setIsLoggedIn }) => {
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
@@ -46,7 +38,7 @@ const SignupForm = () => {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={handleClose} color="primary">
+          <Button onClick={() => setIsLoggedIn(true)} color="primary">
             Sign Up
           </Button>
         </DialogActions>

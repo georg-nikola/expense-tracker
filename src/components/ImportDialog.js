@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import {
-  Box,
   Button,
   Dialog,
   DialogActions,
@@ -10,7 +9,7 @@ import {
   TextField,
 } from '@mui/material';
 
-const ImportDialog = () => {
+const ImportDialog = ({ isLoggedIn }) => {
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
@@ -23,9 +22,11 @@ const ImportDialog = () => {
 
   return (
     <>
-      <Button variant="contained" color="secondary" onClick={handleClickOpen}>
-        Import Transactions
-      </Button>
+      {isLoggedIn && (
+        <Button variant="contained" color="secondary" onClick={handleClickOpen}>
+          Import Transactions
+        </Button>
+      )}
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Import Transactions</DialogTitle>
         <DialogContent>

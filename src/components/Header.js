@@ -1,10 +1,11 @@
+// src/components/Header.js
 import React from 'react';
 import { AppBar, Box, Toolbar, Typography } from '@mui/material';
 import ImportDialog from './ImportDialog';
 import LoginForm from './LoginForm';
 import SignupForm from './SignupForm';
 
-const Header = () => {
+const Header = ({ isLoggedIn, setIsLoggedIn }) => {
   return (
     <AppBar position="static">
       <Toolbar>
@@ -12,9 +13,9 @@ const Header = () => {
           Expense Tracker
         </Typography>
         <Box>
-        <ImportDialog />
-          <LoginForm />
-          <SignupForm />
+          <ImportDialog isLoggedIn={isLoggedIn} />
+          <LoginForm setIsLoggedIn={setIsLoggedIn} />
+          <SignupForm setIsLoggedIn={setIsLoggedIn} />
         </Box>
       </Toolbar>
     </AppBar>
